@@ -1,4 +1,10 @@
+.MainContainer {
+  /* border: 1px solid orange; */
+}
+
 .BoxList {
+  /* border: 1px solid green; */
+  overflow-y: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

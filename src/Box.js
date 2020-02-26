@@ -4,8 +4,8 @@ import './Box.css';
 class Box extends Component {
   render(){
     let styles = {
-      height: this.props.height,
-      width: this.props.width,
+      height: `${this.props.height}px`,
+      width: `${this.props.width}px`,
       backgroundColor: this.props.color
     }
 

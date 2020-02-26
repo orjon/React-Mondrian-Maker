@@ -10,7 +10,8 @@ class NewBoxForm extends Component {
       color: '',
     };
     this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleInput(e){
@@ -29,23 +30,19 @@ class NewBoxForm extends Component {
     });
   }
 
+  handleReset(){
+    this.setState({
+      height: '',
+      width: '',
+      color: '',
+    });
+  }
+
   render(){
     return(
-      <div className='NewboxForm'>
-        New Box
+      <div className='NewBoxForm'>
         <form
           onSubmit={this.handleSubmit}>
-
-          <div className='form-row'>
-            <label htmlFor='height'>Height </label>
-            <input
-              type='number'
-              id='height'
-              name='height'
-              value={this.state.height}
-              onChange={this.handleInput}>
-            </input>
-          </div>
 
           <div className='form-row'>
             <label htmlFor='width'>Width </label>
@@ -57,7 +54,17 @@ class NewBoxForm extends Component {
               onChange={this.handleInput}>
             </input>
           </div>
-
+          <div className='form-row'>
+            <label htmlFor='height'>Height </label>
+            <input
+              type='number'
+              id='height'
+              name='height'
+              value={this.state.height}
+              onChange={this.handleInput}>
+            </input>
+          </div>
+          
           <div className='form-row'>
             <label htmlFor='color'>Color </label>
             <input

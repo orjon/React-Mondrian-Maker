@@ -1,0 +1,64 @@
+button {
+  height: 29px;
+  outline: none;
+  align-items: right;
+  font-size: 10pt;
+  padding: 7px;
+  border: 0px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+button.reset{
+    background-color: red;
+    margin-right: 10px;
+}
+
+button.submit {
+  background-color: dodgerblue;
+}
+
+.NewBoxForm {
+  /* border: 1px solid red;  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid blue; */
+  width: 300px;
+}
+
+.form-row {
+  display: flex;
+}
+
+
+.form-row label{
+padding-right: 10px;
+}
+
+.form-row input {
+font-size: 12pt;
+outline: none;
+flex: 1;
+height: 20px;
+}
+
+.form-row.last {
+justify-content: flex-end;
+align-self: flex-end;
+margin: 10px 0;
+}
+
+form label {
+  width: 80px;
+  text-align: right;
+  /* border: 1px solid cyan; */
+}
