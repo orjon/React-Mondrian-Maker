@@ -16,6 +16,11 @@ button.reset{
     margin-right: 10px;
 }
 
+button.random{
+  background-color: orange;
+  margin-right: 10px;
+}
+
 button.submit {
   background-color: dodgerblue;
 }

@@ -12,6 +12,7 @@ class NewBoxForm extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleRandom = this.handleRandom.bind(this);
   }
 
   handleInput(e){
@@ -19,6 +20,8 @@ class NewBoxForm extends Component {
     [e.target.name] : e.target.value
     })
   }
+
+
 
   handleSubmit(e){
     e.preventDefault();
@@ -30,6 +33,8 @@ class NewBoxForm extends Component {
     });
   }
 
+
+
   handleReset(){
     this.setState({
       height: '',
@@ -38,12 +43,21 @@ class NewBoxForm extends Component {
     });
   }
 
+  handleRandom(e){
+    let randomWidth=(Math.floor(Math.random()*75)+75);
+    let randomHeight=(Math.floor(Math.random()*75)+75);
+    let randomColor=`rgb(${((Math.floor(Math.random()*255)))},${((Math.floor(Math.random()*255)))},${((Math.floor(Math.random()*255)))})`;
+    this.setState({
+      height: randomWidth,
+      width: randomHeight,
+      color: randomColor,
+    })
+  }
+
   render(){
     return(
       <div className='NewBoxForm'>
-        <form
-          onSubmit={this.handleSubmit}>
-
+        <form onSubmit={this.handleSubmit}>
           <div className='form-row'>
             <label htmlFor='width'>Width </label>
             <input
@@ -77,8 +91,9 @@ class NewBoxForm extends Component {
           </div>
 
           <div className='form-row last'>
-              <button className='reset' type='reset' onClick={this.handleReset} id='button-sliceReset'>Reset</button>
-              <button className='submit' id='button-slice'>Add box</button>
+              <button className='reset' type='reset' onClick={this.handleReset} id='button-reset'>Reset</button>
+              <button className='random' id='button-random' onClick={this.handleRandom} >Random</button>
+              <button className='submit' type='submit' id='button-add' >Add box</button>
           </div>
         </form>
       </div>
