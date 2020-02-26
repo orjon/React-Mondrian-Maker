@@ -16,7 +16,7 @@ class BoxList extends Component {
       ]
     };
     this.addBox = this.addBox.bind(this);
-    this.removeBox = this.removeBox.bind(this);
+    // this.removeBox = this.removeBox.bind(this);
   }
 
   showBoxes(){
@@ -28,7 +28,7 @@ class BoxList extends Component {
         color={box.color}
         key={box.id} 
         id={box.id}
-        removeBox={this.removeBox}/>
+        removeBox={() => this.removeBox(box.id)}/>
       ))
     )
   }
