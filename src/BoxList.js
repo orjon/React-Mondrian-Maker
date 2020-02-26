@@ -16,6 +16,7 @@ class BoxList extends Component {
       ]
     };
     this.addBox = this.addBox.bind(this);
+    this.removeBox = this.removeBox.bind(this);
   }
 
   showBoxes(){
@@ -25,18 +26,26 @@ class BoxList extends Component {
         height={box.height}
         width={box.width}
         color={box.color}
-        key={uuid()} />
+        key={box.id} 
+        id={box.id}
+        removeBox={this.removeBox}/>
       ))
     )
   }
 
   addBox(box){
     let newBox = {...box, id: uuid()};
-    console.log(newBox);
-    console.log(this.state.boxes);
+    // console.log(newBox);
+    // console.log(this.state.boxes);
     this.setState(state => (
       {boxes: [...this.state.boxes, newBox]}
     ))
+  }
+
+  removeBox(boxId){
+    this.setState({
+      boxes: [...this.state.boxes.filter(box => box.id !== boxId)]
+    })
   }
 
 

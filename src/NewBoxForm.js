@@ -64,7 +64,7 @@ class NewBoxForm extends Component {
               onChange={this.handleInput}>
             </input>
           </div>
-          
+
           <div className='form-row'>
             <label htmlFor='color'>Color </label>
             <input
@@ -78,7 +78,7 @@ class NewBoxForm extends Component {
 
           <div className='form-row last'>
               <button className='reset' type='reset' onClick={this.handleReset} id='button-sliceReset'>Reset</button>
-              <button className='submit' id='button-slice'>Add item</button>
+              <button className='submit' id='button-slice'>Add box</button>
           </div>
         </form>
       </div>
