@@ -5,7 +5,7 @@ import BoxList from './BoxList'
 function App() {
   return (
     <div className="App">
-      <h1>Color Box Maker</h1>
+      <h1>Mondrian Maker</h1>
       <BoxList />
     </div>
   );

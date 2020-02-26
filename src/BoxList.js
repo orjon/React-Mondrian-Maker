@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import NewBoxForm from './NewBoxForm';
 import Box from './Box';
 import './BoxList.css';
+import {v4 as uuid} from 'uuid'
 
 class BoxList extends Component {
     constructor(props){
@@ -16,22 +18,35 @@ class BoxList extends Component {
   }
 
   showBoxes(){
-    let boxList =[]
-    for (let i=0; i<this.state.boxes.length; i++) {
-      boxList.push(<Box
-        height={this.state.boxes[i].height}
-        width={this.state.boxes[i].width}
-        color={this.state.boxes[i].color} />)
-    }
-    return boxList
+    return(
+      this.state.boxes.map(box => (
+        <Box
+        height={box.height}
+        width={box.width}
+        color={box.color}
+        key={uuid()} />
+      ))
+    )
+  }
+
+  addBox(box){
+    let newBox = {...box, id: uuid()};
+    console.log(newBox);
+    this.setState(state => (
+      {boxes: [...this.state.boxes, newBox]}
+    ))
   }
 
 
   render(){
     return(
-      <div className='BoxList'>
-        {this.showBoxes()}
+      <div>
+        <NewBoxForm addBox={this.addBox}/>
+        <div className='BoxList'>
+          {this.showBoxes()}
+        </div>
       </div>
+
     )
   }
 }

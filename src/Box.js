@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
+import './Box.css';
 
 class Box extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state ={
-
-  //   }
-  // }
   render(){
     let styles = {
       height: this.props.height,
